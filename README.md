@@ -2,13 +2,14 @@
  Almost dockerless librephotos
 
 # About
-Often it is (too) hard to install the [dockerless librephotos](https://www.google.com "Librephotos linux"). Software version mismatch on the host or other reasons gives installation / compilation errors.
+Often it is (too) hard to install the [dockerless librephotos](https://github.com/LibrePhotos/librephotos-linux "Librephotos linux"). Software version mismatch on the host or other reasons gives installation / compilation errors.
 Dockerized version of the librephotos uses too many container on the host systems **already running** nginx (or other reverse proxy), redis cache server, Postgresql database. From the original [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker "Librephotos docker") containers
 - proxy
 - db
 - frontend
 - backend
 - redis
+
 it is enough just 2 of them: backend and frontend. All other services - database, caching, proxy - can use on the host machine or even the remote servers.
 Questionable is even the proxy service in the fully dockerized librephotos version - librephotos can be accessed directly on the port 3000 bypassing proxy, or by setting in the file _.env_ varianle `httpPort=80` and access librephotos on standart http 80 port (not tested).
 
@@ -18,7 +19,7 @@ Semi-dockerized version of the librephotos advantages:
 - easy to update.
 
 ## Cons
-- installation for advances users, who's system already has required services or user can install.
+- installation for advances users, who's system already has required services or system administrator can install.
 
 ***
 
@@ -35,7 +36,6 @@ Download two files from official  [librephotos-docker](https://github.com/LibreP
 cd && mkdir librephotos-semi-docker && cd librephotos-semi-docker
 wget https://raw.githubusercontent.com/LibrePhotos/librephotos-docker/main/docker-compose.yml
 wget https://raw.githubusercontent.com/LibrePhotos/librephotos-docker/main/librephotos.env -O .env
-la
 ```
 Delete services **only** if your host runs these services or can use remotely services like remote database server. Otherwise use docker version for these services.
 Remove lines in the file _docker-compose.yml_:
@@ -67,7 +67,7 @@ db:
       timeout: 5s
       retries: 5
 ```
-**AND**
+**and**
 ```
 # Wait for Postgres
     depends_on:
