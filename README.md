@@ -43,6 +43,7 @@ Delete services **only** if your host runs these services or can use remotely se
 Remove lines in the file _docker-compose.yml_:
 Delete services from the file _docker-compose.yml_**only** if your host runs these services or can use remotely services like remote database server. Otherwise use docker version for these services.
 
+
 #### REDIS server
 ```
 redis:
