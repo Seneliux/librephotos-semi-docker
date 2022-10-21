@@ -34,9 +34,6 @@ Stages
 Download two files from official  [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker "Librephotos docker"), or clone git repository , or rewrite letter by letter - that on you.
 Clone git repository:
 ```
-cd && mkdir librephotos-semi-docker && cd librephotos-semi-docker
-wget --no-check-certificate https://raw.githubusercontent.com/LibrePhotos/librephotos-docker/main/docker-compose.yml
-wget --no-check-certificate https://raw.githubusercontent.com/LibrePhotos/librephotos-docker/main/librephotos.env -O .env
 cd && git clone https://github.com/Seneliux/librephotos-semi-docker.git
 ```
 Delete services from the file _docker-compose.yml_**only** if your host runs these services or can use remotely services like remote database server. Otherwise use docker version for these services.
