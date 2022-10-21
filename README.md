@@ -42,7 +42,7 @@ cd && git clone https://github.com/Seneliux/librephotos-semi-docker.git
 Delete services **only** if your host runs these services or can use remotely services like remote database server. Otherwise use docker version for these services.
 Remove lines in the file _docker-compose.yml_:
 Delete services from the file _docker-compose.yml_**only** if your host runs these services or can use remotely services like remote database server. Otherwise use docker version for these services.
-
+test
 
 #### REDIS server
 ```
