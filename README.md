@@ -88,7 +88,7 @@ proxy:
      - backend
      - frontend
 ```
-Here are examples of the final [docker-compose.yml](../blob/draft/docker-compose.yml) and [.env](../blob/draft/.env) files. Changed or modified lines commented. Every else deleted.
+Here are examples of the final [docker-compose.yml](../draft/docker-compose.yml) and [.env](../draft/.env) files. Changed or modified lines commented. Every else deleted.
 
 ### Stage 2 - Database
 Configurations files examples is for the Postgresql **15** on Ubuntu system. Please adopt path, version to your system.
