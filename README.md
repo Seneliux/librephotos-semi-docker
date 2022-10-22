@@ -122,7 +122,12 @@ Connect to database:
 ```
 psql -h 111.222.333.444 -p 5432 -U librephotos
 ```
-IP is the same like in the file _.env_ `dbHost=111.222.333.444`
+IP is the same like in the file _.env_ `dbHost=111.222.333.444`. On the local network under NAT IP can be local 192.168.0.0/24, on server, connected directly to internet, can be external IP. Check IP:
+```
+ip a
+```
+
+
 Enter password, and if you see prompt 'librephotos=>' continue by typing "exit", otherwise make same caffe and find (legal) way to connect to the librephotos database as librephotos user.
 
 ### Stage 3 - installing librephotos-semi-docker
