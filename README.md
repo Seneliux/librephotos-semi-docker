@@ -114,7 +114,7 @@ EXIT
 exit
 ```
 
-Return to librephotos host, and connect to database:
+Connect to database:
 
 ```
 psql -h 111.222.333.444 -p 5432 -U librephotos
