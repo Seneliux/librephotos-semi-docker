@@ -146,7 +146,7 @@ If output is empty, then make another cup of coffee. Something is wrong with ser
 
 ### Stage 4 - reverse proxy nginx.
 
-How to install and configure nginx, [walking ducks](https://is.gd/z2I5PQ "ungoogle - privacy is important!") can find explanations, [here is example of the nginx FQDN subdomain config](../draft/nginx_FQDN.conf) + configured [free letsencrypt SSL certificate](https://letsencrypt.org/ "letsencrypt"), runing on the same machine as _backend_.
+Run script 'nginx.sh', then copy file to nginx virtual host directory (Ubuntu default is /etc/nginx/sites-available) and enable this host.
 
 ### Stage 5 - coffee time
 
