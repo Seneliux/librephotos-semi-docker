@@ -7,14 +7,9 @@ upstream backend {
 }
 
 server {
-  listen 443 ssl http2;
-  server_name $DOMAIN;                  #### CHANGE $DOMAIN######
+  listen 80;
+  server_name _;
 
-#  Lets encrypt
-  ssl_certificate /etc/letsencrypt/live/$DOMAIN/fullchain.pem;           #### CHANGE $DOMAIN ######
-  ssl_certificate_key /etc/letsencrypt/live/$DOMAIN/privkey.pem;           #### CHANGE $DOMAIM ######
-  include /etc/letsencrypt/options-ssl-nginx.conf;
-  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
   access_log /var/log/nginx/librephotos.access;
   error_log /var/log/nginx/librephotos.error warn;
@@ -49,7 +44,8 @@ location / {
   # Django media
     location /protected_media  {
         internal;
-        alias /files/librephotos_data/protected_media/;        #### CHANGE
+        alias 1
+
     }
 
     location /static/drf-yasg {
@@ -58,25 +54,19 @@ location / {
 
     location /data  {
         internal;
-        alias /files/librephotos_data/;                       #### CHANGE
+        alias 2
    }
 
 
    # Original Photos
     location /original  {
         internal;
-        alias /files/photos/;                           #### CHANGE
+        alias 3          E
     }
 
     # Nextcloud Original Photos
     location /nextcloud_original  {
         internal;
-        alias /files/librephotos_data/nextcloud_media/;      #### CHANGE
-    }
-}
-
-server  {
-        listen          0.0.0.0:80;
-        server_name     DOMAIN;                            ##### CHANGE $DOMAIN
-        return          301 https://$server_name$request_uri;
+        alias 4
+     }
 }
