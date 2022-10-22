@@ -31,15 +31,14 @@ Stages
 4. Adopt nginx reverse proxy
 
 ### Stage 1 - modifying files
-Download two files from official  [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker "Librephotos docker"), or clone git repository , or rewrite letter by letter - that on you.
+
 Clone git repository:
 ```
 cd && git clone https://github.com/Seneliux/librephotos-semi-docker.git
 cd librephotos-semi-docker
 
 ```
-Delete services from the file _docker-compose.yml_ **only** if your host runs these services or can use remotely services like remote database server. Otherwise use docker version for these services.
-test
+In case of **NOT USING** some services on the host machine, copy these from upstream [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker "Librephotos docker") github repository. 
 
 #### REDIS server
 ```
@@ -90,9 +89,9 @@ proxy:
      - backend
      - frontend
 ```
-Here are examples of the final [docker-compose.yml](../draft/docker-compose.yml) and [.env](../draft/.env) files. Changed or modified lines commented. Every else deleted.
 
 ### Stage 2 - Database
+If librephotos uses docker database service, skip this step to [Stage 3 - installing librephotos-semi-docker](https://github.com/Seneliux/librephotos-semi-docker/edit/draft/README.md#stage-3---installing-librephotos-semi-docker))
 Configurations files examples is for the Postgresql **15** on Ubuntu system. Please adopt path, version to your system.
 On the remote database server open port (default) 5432 and change configuration  `/etc/postgresql/15/main/postgresql.conf`. Of course, if server is remote. Do not forget to open port.
 Change line:
