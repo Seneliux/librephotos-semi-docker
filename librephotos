@@ -61,7 +61,7 @@ location / {
    # Original Photos
     location /original  {
         internal;
-        alias 3          E
+        alias 3
     }
 
     # Nextcloud Original Photos
