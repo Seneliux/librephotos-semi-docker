@@ -36,7 +36,7 @@ Clone git repository:
 ```
 cd && git clone https://github.com/Seneliux/librephotos-semi-docker.git
 ```
-Delete services from the file _docker-compose.yml_**only** if your host runs these services or can use remotely services like remote database server. Otherwise use docker version for these services.
+Delete services from the file _docker-compose.yml_ **only** if your host runs these services or can use remotely services like remote database server. Otherwise use docker version for these services.
 test
 
 #### REDIS server
@@ -99,7 +99,7 @@ Change line:
 Add to the file `/etc/postgresql/14/main/pg_hba.conf` at the end this line, event if the database server is local:
 `host    all             all             0.0.0.0/0            scram-sha-256`
 
-Connect to the database locally, or login to to the remote machine, and then connect to database from root account. Do it copying line by line, this is (not yet) automatized (sorry, I have no time). Two lines `DROP...` will **WIPE* old librephotos database and user, if exist. Useful for full reinstall, otherwise think twice. Password _AaAa1234_ must be the same in the file `.env`.
+Connect to the database locally, or login to to the remote machine, and then connect to database from root account. **Do it copying line by line**, this is (not yet) automatized (sorry, I have no time). Two lines `DROP...` will **WIPE* old librephotos database and user, if exist. Useful for full reinstall, otherwise think twice. Password _AaAa1234_ must be the same in the file `.env`.
 
 ```
 su postgres
@@ -139,7 +139,7 @@ If output is empty, then make another cup of coffee. Something is wrong with ser
 
 ### Stage 4 - reverse proxy nginx.
 
-How to install and configure nginx, [walking ducks](https://duckduckgo.com/ "ungoogle - privacy is important!") can find explanations, [here is example of the nginx FQDN subdomain config](../blob/draft/nginx_FQDN.conf) + configured [free letsencrypt SSL certificate](https://letsencrypt.org/ "letsencrypt"), runing on the same machine as _backend_
+How to install and configure nginx, [walking ducks](https://duckduckgo.com/ "ungoogle - privacy is important!") can find explanations, [here is example of the nginx FQDN subdomain config](../blob/draft/nginx_FQDN.conf) + configured [free letsencrypt SSL certificate](https://letsencrypt.org/ "letsencrypt"), runing on the same machine as _backend_.
 
 ### Stage 5 - coffee time
 
