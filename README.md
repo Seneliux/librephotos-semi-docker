@@ -35,7 +35,8 @@ Download two files from official  [librephotos-docker](https://github.com/LibreP
 Clone git repository:
 ```
 cd && git clone https://github.com/Seneliux/librephotos-semi-docker.git
-cd
+cd librephotos-semi-docker
+
 ```
 Delete services from the file _docker-compose.yml_ **only** if your host runs these services or can use remotely services like remote database server. Otherwise use docker version for these services.
 test
