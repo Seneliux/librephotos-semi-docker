@@ -88,15 +88,15 @@ proxy:
      - backend
      - frontend
 ```
-Here are examples of the final docker-compose.yml and .env files. Changed or modified lines commented. Every else deleted.
+Here are examples of the final [docker-compose.yml](../blob/draft/docker-compose.yml) and [.env](../blob/draft/.env) files. Changed or modified lines commented. Every else deleted.
 
 ### Stage 2 - Database
-Configurations files examples is for the Postgresql **14** on Ubuntu system. Please adopt path, version to your system.
-On the remote database server open port (default) 5432 and change configuration  `/etc/postgresql/14/main/postgresql.conf`. Of course, if server is remote. Do not forget to open port.
+Configurations files examples is for the Postgresql **15** on Ubuntu system. Please adopt path, version to your system.
+On the remote database server open port (default) 5432 and change configuration  `/etc/postgresql/15/main/postgresql.conf`. Of course, if server is remote. Do not forget to open port.
 Change line:
 `listen_addresses = '*'`
 
-Add to the file `/etc/postgresql/14/main/pg_hba.conf` at the end this line, event if the database server is local:
+Add to the file `/etc/postgresql/15/main/pg_hba.conf` at the end this line, event if the database server is local:
 `host    all             all             0.0.0.0/0            md5`
 
 Connect to the database locally, or login to to the remote machine, and then connect to database from root account. **Do it copying line by line**, this is (not yet) automatized (sorry, I have no time). Two lines `DROP...` will **WIPE* old librephotos database and user, if exist. Useful for full reinstall, otherwise think twice. Password _AaAa1234_ must be the same in the file `.env`.
