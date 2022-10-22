@@ -164,12 +164,13 @@ In the file `docker-compose.yml` these lines expose host socket to docker and do
 
 
 If redis server is listening on port (default 6379), then expose port to host:
-`backend:
+```
+backend:
   volumes:
     ports:
     - 6379:6379
-`
-and socket- instead of REDIS_PATH add two lines:
+```
+and socket- instead of REDIS_PATH (delete this line) add two new lines:
 `
 environment:
   - REDIS_HOST=111.222.333.444   #CAHNGE IP
