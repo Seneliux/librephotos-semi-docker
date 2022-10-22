@@ -38,7 +38,7 @@ cd && git clone https://github.com/Seneliux/librephotos-semi-docker.git
 cd librephotos-semi-docker
 
 ```
-In case of **NOT USING** some services on the host machine, copy these from upstream [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker "Librephotos docker") github repository (here these are not updated): 
+In case of **NOT USING** some services on the host machine, copy these from upstream [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker "Librephotos docker") github repository (here these are not updated). Accordinally change some variables in the fiel _.env_ , like _dbhost=db_ : 
 
 #### REDIS server
 ```
