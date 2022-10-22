@@ -97,7 +97,7 @@ Change line:
 `listen_addresses = '*'`
 
 Add to the file `/etc/postgresql/14/main/pg_hba.conf` at the end this line, event if the database server is local:
-`host    all             all             0.0.0.0/0            scram-sha-256`
+`host    all             all             0.0.0.0/0            md5`
 
 Connect to the database locally, or login to to the remote machine, and then connect to database from root account. **Do it copying line by line**, this is (not yet) automatized (sorry, I have no time). Two lines `DROP...` will **WIPE* old librephotos database and user, if exist. Useful for full reinstall, otherwise think twice. Password _AaAa1234_ must be the same in the file `.env`.
 
