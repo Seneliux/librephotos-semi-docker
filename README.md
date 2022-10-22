@@ -10,7 +10,7 @@ Dockerized version of the librephotos uses too many container on the host system
 - backend
 - redis
 
-it is enough just 2 of them: backend and frontend. All other services - database, caching, proxy - can use on the host machine or even the remote servers.
+it is enough just 2 of them: backend and frontend. All other services - database, caching, proxy - can use on the host machine or even on the remote servers.
 Questionable is even the docker proxy service in the fully dockerized librephotos version - librephotos can be accessed directly on the port 3000 without proxy.
 
 ## Pros
