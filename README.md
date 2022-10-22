@@ -139,7 +139,7 @@ If output is empty, then make another cup of coffee. Something is wrong with ser
 
 ### Stage 4 - reverse proxy nginx.
 
-How to install and configure nginx, [walking ducks](https://duckduckgo.com/ "ungoogle - privacy is important!") can find explanations, here is example of the subdomain of the working nginx server + [free letsencrypt SSL certificate](https://letsencrypt.org/ "letsencrypt"), runing on the same machine as _backend_
+How to install and configure nginx, [walking ducks](https://duckduckgo.com/ "ungoogle - privacy is important!") can find explanations, [here is example of the nginx FQDN subdomain config](../blob/draft/nginx_FQDN.conf) + configured [free letsencrypt SSL certificate](https://letsencrypt.org/ "letsencrypt"), runing on the same machine as _backend_
 
 ### Stage 5 - coffee time
 
