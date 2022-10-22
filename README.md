@@ -146,7 +146,7 @@ If output is empty, then make another cup of coffee. Something is wrong with ser
 
 ### Stage 4 - reverse proxy nginx.
 
-Run script 'nginx.sh', then copy file to nginx virtual host directory (Ubuntu default is /etc/nginx/sites-available) and enable this host.
+Run script 'nginx.sh', then copy file _librephotos_  to nginx virtual host directory (Ubuntu default is /etc/nginx/sites-available) and enable this host.
 
 ### Stage 5 - coffee time
 
