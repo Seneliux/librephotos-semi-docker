@@ -171,11 +171,11 @@ backend:
     - 6379:6379
 ```
 and socket- instead of REDIS_PATH (delete this line) add two new lines:
-`
+```
 environment:
   - REDIS_HOST=111.222.333.444   #CAHNGE IP
   - REDIS_PORT=6379
-`
+```
 
 #### Update
 The same way like [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker "Librephotos docker").
