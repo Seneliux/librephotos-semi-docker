@@ -10,7 +10,6 @@ server {
   listen 80;
   server_name _;
 
-
   access_log /var/log/nginx/librephotos.access;
   error_log /var/log/nginx/librephotos.error warn;
 
