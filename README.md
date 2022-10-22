@@ -11,7 +11,7 @@ Dockerized version of the librephotos uses too many container on the host system
 - redis
 
 it is enough just 2 of them: backend and frontend. All other services - database, caching, proxy - can use on the host machine or even the remote servers.
-Questionable is even the proxy service in the fully dockerized librephotos version - librephotos can be accessed directly on the port 3000 bypassing proxy, or by setting in the file _.env_ varianle `httpPort=80` and access librephotos on standart http 80 port (not tested).
+Questionable is even the **docker** proxy service in the fully dockerized librephotos version - librephotos can be accessed directly on the port 3000 without proxy, or by setting in the file _.env_ varianle `httpPort=80` and access librephotos on standart http 80 port (not tested).
 
 ## Pros
 Semi-dockerized version of the librephotos advantages:
@@ -171,3 +171,6 @@ environment:
   - REDIS_HOST=111.222.333.444   #CAHNGE IP
   - REDIS_PORT=6379
 `
+
+#### Update
+The same way like [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker "Librephotos docker").
