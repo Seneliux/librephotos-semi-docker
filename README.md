@@ -135,11 +135,11 @@ lsof -i:8001
 Must return some output like:
 `docker-pr 1485590 root    4u  IPv4 2193053      0t0  TCP *:3000 (LISTEN)
 docker-pr 1485645 root    4u  IPv4 2193074      0t0  TCP *:8001 (LISTEN)`
-If output is empty, then make another cup of coffee. Something is wrong. Maybe with server also, not only with you.
+If output is empty, then make another cup of coffee. Something is wrong with server, not only with you.
 
 ### Stage 4 - reverse proxy nginx.
 
-How to install and configure nginx, [walking ducks](https://duckduckgo.com/ "ungoogle - privacz is important!") can find explanations, here is example of the subdomain of the working nginx server + [free letsencrypt SSL certificate](https://letsencrypt.org/ "letsencrypt"), runing on the same machine as _backend_
+How to install and configure nginx, [walking ducks](https://duckduckgo.com/ "ungoogle - privacy is important!") can find explanations, here is example of the subdomain of the working nginx server + [free letsencrypt SSL certificate](https://letsencrypt.org/ "letsencrypt"), runing on the same machine as _backend_
 
 ### Stage 5 - coffee time
 
@@ -147,12 +147,18 @@ Upload photos, scan and enjoy.
 
 Some notes:
 Connection to redis server through socks. Redis config:
-`port 0
-unixsocket /run/redis/redis-server.sock
-unixsocketperm 770`
+```port 0 
+unixsocket /run/redis/redis-server.sock  
+unixsocketperm 770
+```
+
 In the file `docker-compose.yml` these lines expose host socket to docker and docker connects directly to redis socket on the Host:
-`- /run/redis/redis-server.sock:/run/redis/redis-server.sock
-- REDIS_PATH=/run/redis/redis-server.sock`
+```
+- /run/redis/redis-server.sock:/run/redis/redis-server.sock
+- REDIS_PATH=/run/redis/redis-server.sock
+```
+
+
 If redis server is listening on port (default 6379), then expose port to host:
 `backend:
   volumes:
