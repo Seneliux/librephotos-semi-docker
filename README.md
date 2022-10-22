@@ -91,7 +91,7 @@ proxy:
 ```
 
 ### Stage 2 - Database
-If librephotos uses docker database service, skip this step to [Stage 3 - installing librephotos-semi-docker](https://github.com/Seneliux/librephotos-semi-docker/edit/draft/README.md#stage-3---installing-librephotos-semi-docker)
+If librephotos uses docker database service, skip this step to [Stage 3 - installing librephotos-semi-docker](https://github.com/Seneliux/librephotos-semi-docker/edit/draft/README.md#stage-3---installing-librephotos-semi-docker).  
 Configurations files examples is for the Postgresql **15** on Ubuntu system. Please adopt path, version to your system.
 On the remote database server open port (default) 5432 and change configuration  `/etc/postgresql/15/main/postgresql.conf`. Of course, if server is remote. Do not forget to open port.
 Change line:
