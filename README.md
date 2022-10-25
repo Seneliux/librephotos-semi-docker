@@ -128,6 +128,11 @@ ip a
 
 
 Enter password, and if you see prompt 'librephotos=>' continue by typing "exit", otherwise make same caffe and find (legal) way to connect to the librephotos database as librephotos user.
+Show tables in the database:
+```
+\dt
+```
+For now must be empty. This will need later, if firewall does not allows connectiong between the docker container and host.
 
 ### Stage 3 - installing librephotos-semi-docker
 CD to the librephotos-semi-docker and run
@@ -182,3 +187,20 @@ environment:
 
 #### Update
 The same way like [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker "Librephotos docker").
+
+#### Issues
+Affer installation, first screen in the browser must be User registrarion. If shows only login page, that can couse firewall. Check logs by greping Postgresql port (dfault 5432):
+```
+cat /var/log/ufw.log | grep 5432
+```
+If output gives lines about blocking, then must allow connection from librephotos backend to Host.
+First at all must find docker network address and subnen. A few commands- first shows docker networks, second - shows network information ( the ID 05656707dfc7 is only example , change it to real docker network ID:
+```
+docker network ls
+docker network inspect  05656707dfc7
+```
+Then find IPV4 and allow to connect:
+```
+ ufw allow from 172.18.0.0/16
+```
+Then restart librephotos, and try again to connect.
