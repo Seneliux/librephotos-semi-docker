@@ -193,7 +193,7 @@ Affer installation, first screen in the browser must be User registrarion. If sh
 ```
 cat /var/log/ufw.log | grep 5432
 ```
-If output gives lines about blocking, then must allow connection from librephotos backend to Host.
+If output gives lines about blocking, then must allow connection from librephotos **backend** to Host.
 First at all must find docker network address and subnen. A few commands- first shows docker networks, second - shows network information ( the ID 05656707dfc7 is only example , change it to real docker network ID:
 ```
 docker network ls
