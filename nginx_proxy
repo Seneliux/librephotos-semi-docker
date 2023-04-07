@@ -27,7 +27,8 @@ location / {
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header Host backend;
       include uwsgi_params;
-      proxy_pass http://backend;
+      # this is not mistake - on fresh install get redirect to first user registration (maybe need to corrent all "backend" locations?):
+      proxy_pass http://frontend;
    }
 
     # needed for webpack-dev-server
