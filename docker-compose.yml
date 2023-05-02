@@ -19,11 +19,11 @@ services:
     volumes:
       - ${scanDirectory}:/data
       - ${data}/protected_media:/protected_media
-      - /var/log/librephotos:/logs                                # changed to the default Ubuntu logs path.
+      - /var/log/librephotos:/logs                                # changed to the default Ubuntu / Arch logs path.
       - ${data}/cache:/root/.cache
       - ${data}/nextcloud_media:/nextcloud_media                  # added for Nexctloud files.
-      - /run/redis/redis-server.sock:/run/redis/redis-server.sock
-
+      - /run/redis/redis-server.sock:/run/redis/redis-server.sock # Ubuntu REDIS socket path. On ArchLinux remove this line
+      - /run/redis/redis.sock:/run/redis/redis.sock               # Arch REDIS socket path. On Ubuntu/Debian remove this line
     environment:
       - SECRET_KEY=${shhhhKey}
       - BACKEND_HOST=localhost
@@ -37,9 +37,10 @@ services:
       - DB_HOST=${dbHost}
       - DB_PORT=5432
       - REDIS_PATH=/run/redis/redis-server.sock                   # Redis socket connection.
-      - MAPBOX_API_KEY=${mapApiKey}
-      - WEB_CONCURRENCY=${gunniWorkers}
-      - SKIP_PATTERNS=${skipPatterns}
-      - ALLOW_UPLOAD=${allowUpload}
+      - MAPBOX_API_KEY=${mapApiKey:-}
+      - WEB_CONCURRENCY=${gunniWorkers:-1}
+      - SKIP_PATTERNS=${skipPatterns:-}
+      - ALLOW_UPLOAD=${allowUpload:-false}
+      - CSRF_TRUSTED_ORIGINS=${csrfTrustedOrigins:-}
       - DEBUG=0
-      - HEAVYWEIGHT_PROCESS=${HEAVYWEIGHT_PROCESS}
+      - HEAVYWEIGHT_PROCESS=${HEAVYWEIGHT_PROCESS:-}
